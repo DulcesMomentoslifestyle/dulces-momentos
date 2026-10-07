@@ -54,7 +54,7 @@ section{padding:32px 0}
 .tag{font-size:11px;text-transform:uppercase;letter-spacing:.7px;font-weight:900;color:var(--green)}
 .product h3{font-size:18px;margin:7px 0}.product p{font-size:14px;color:var(--muted);line-height:1.5;margin:0 0 14px}
 .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;gap:10px}
-.stars{font-size:13px;color:#9b6f20}.amazon{font-size:12px;color:var(--muted)}
+.stars{font-size:13px;color:#9b6f20}.amazon{font-size:12px;color:var(--muted)}.affiliate-label{font-size:12px;color:var(--muted);margin:8px 0 4px}
 .actions{display:flex;gap:8px;margin-top:14px}.actions .btn{flex:1;text-align:center}.fav{width:46px;background:#f3f7f4;color:var(--green);border:1px solid var(--line);border-radius:13px;font-size:18px;cursor:pointer}
 .fav.on{background:#e8f4eb}
 .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -179,7 +179,7 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
     <div>
       <span class="kicker">💚 Selección sencilla · Compra informada</span>
       <h1>Encuentra cosas que encajen contigo.</h1>
-      <p>Una selección de productos para alimentación sin gluten, cocina, deporte y movilidad. Buscamos opciones interesantes y te llevamos a Amazon para que puedas consultar la información actual.</p>
+      <p>Una selección editorial de referencias para alimentación sin gluten, cocina, deporte y movilidad. Te llevamos a búsquedas de Amazon para que puedas consultar la información actual.</p>
       <div class="searchbox">
         <input id="search" type="search" placeholder="Ej.: galletas sin gluten, pasta, cocina..." aria-label="Buscar productos">
         <button class="btn" onclick="applySearch()">Buscar</button>
@@ -209,8 +209,8 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
 
 <section id="productos">
 <div class="container">
-  <div class="section-head"><div><h2>Selección inicial</h2><p>24 productos y búsquedas iniciales. El precio y la disponibilidad se consultan en Amazon.</p></div></div>
-  <div class="notice" style="margin-bottom:18px"><strong>Cómo funciona:</strong> hemos empezado con productos concretos y búsquedas de producto en Amazon. Cuando tu cuenta tenga acceso a la API, podremos sustituir estas búsquedas por fichas de producto actualizadas automáticamente.</div>
+  <div class="section-head"><div><h2>Selección inicial</h2><p>24 opciones y búsquedas iniciales. El precio y la disponibilidad se consultan en Amazon.</p></div></div>
+  <div class="notice" style="margin-bottom:18px"><strong>Cómo funciona:</strong> hemos empezado con referencias orientativas y búsquedas en Amazon. El enlace abre resultados de Amazon para que puedas consultar la ficha, el precio, la disponibilidad y la información actual antes de comprar.</div>
   
 <section class="hero">
   <div class="hero-copy">
@@ -395,7 +395,7 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
       <div class="check">✓ <span><b>Siempre revisar:</b> ingredientes, alérgenos, disponibilidad y condiciones antes de comprar.</span></div>
     </div>
   </div>
-  <div class="notice"><strong>Transparencia:</strong> Dulces Momentos Lifestyle participa en el Programa de Afiliados de Amazon. Como afiliado, podemos obtener ingresos por compras elegibles. Las características, disponibilidad y precios pueden cambiar en Amazon.</div>
+  <div class="notice"><strong>Transparencia:</strong> Dulces Momentos Lifestyle participa en el Programa de Afiliados de Amazon. Como un Afiliado de Amazon, gano por compras elegibles. Las características, disponibilidad y precios pueden cambiar en Amazon.</div>
 </div>
 </div>
 </section>
@@ -416,12 +416,10 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
 
 <script>
 /*
-  CONFIGURACIÓN:
-  La web está preparada para sustituir los enlaces de búsqueda por enlaces
-  especiales de Amazon cuando tengas productos concretos.
-  Tag de afiliado usado en esta demo: productson0a3-21
+  CONFIGURACIÓN DE AFILIADOS
+  Los enlaces a Amazon usan la etiqueta de afiliado de esta cuenta.
 */
-const TAG="productson0a3-21";
+const TAG="vidasanalifes-21";
 
 const products=[
  {id:1,cat:"sin-gluten",icon:"🍞",name:"Schär Pan de Molde sin Gluten",desc:"Pan de molde sin gluten de una de las marcas más conocidas de esta categoría.",term:"Schär Pan Molde sin Gluten"},
@@ -467,7 +465,7 @@ function renderProducts(){
    <span class="tag">${label(p.cat)}</span><h3>${p.name}</h3><p>${p.desc}</p>
    <div class="meta"><span class="stars">Selección editorial</span><span class="amazon">Amazon.es</span></div>
    <div class="actions">
-    <a class="btn" href="${amazonSearch(p.term)}" target="_blank" rel="nofollow sponsored noopener">Ver en Amazon</a>
+    <div class="affiliate-label">Enlace de afiliado</div><a class="btn" href="${amazonSearch(p.term)}" target="_blank" rel="nofollow sponsored noopener">Buscar en Amazon</a>
     <button class="fav" title="Guardar" onclick="toggleFav(${p.id},this)">♡</button>
    </div>
   </div>
@@ -501,7 +499,7 @@ document.querySelectorAll('[data-cat]').forEach(function(el){
 
 <footer class="site-footer">
   <div><strong>Dulces Momentos Lifestyle</strong><p>Contenido, selección y recomendaciones para una vida práctica, activa y sin gluten.</p></div>
-  <div><strong>Transparencia</strong><p>Participamos en el Programa de Afiliados de Amazon y podemos obtener ingresos por compras elegibles. Los precios y la disponibilidad se consultan en Amazon.</p></div>
+  <div><strong>Transparencia</strong><p>Como un Afiliado de Amazon, gano por compras elegibles. Dulces Momentos Lifestyle participa en el Programa de Afiliados de Amazon. Los precios y la disponibilidad se consultan en Amazon.</p></div>
 </footer>
 
 </body>
