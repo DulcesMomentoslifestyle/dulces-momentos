@@ -205,6 +205,20 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
  html{scroll-behavior:auto}
 }
 
+
+/* --- Biblioteca de artículos --- */
+.blog-section{max-width:1120px;margin:38px auto;padding:0 0 10px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.blog-card{background:#fff;border:1px solid #e0e7e1;border-radius:20px;padding:22px;box-shadow:0 7px 20px rgba(40,70,50,.05);display:flex;flex-direction:column}
+.blog-icon{font-size:2.2rem}
+.blog-card h3{margin:10px 0 8px;color:#294d38;font-size:1.2rem}
+.blog-card p{color:#68766d;line-height:1.55;margin:0 0 15px;font-size:.94rem}
+.blog-card a{color:#39734d;font-weight:850;text-decoration:none;margin-top:auto}
+.blog-card .blog-tag{display:inline-block;font-size:.72rem;font-weight:850;color:#39734d;background:#edf5ee;border-radius:999px;padding:6px 9px;margin-top:2px}
+.blog-note{margin-top:18px;padding:14px 16px;border-radius:14px;background:#fff7df;border:1px solid #f0dfab;color:#67521b;font-size:.9rem;line-height:1.5}
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+
 </style>
   <!-- SEO: sustituir este dominio por el dominio definitivo cuando lo publiques -->
   <link rel="canonical" href="https://www.dulcesmomentoslifestyle.es/">
@@ -233,7 +247,7 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
       <span>Dulces Momentos<small>Lifestyle · Sin gluten</small></span>
     </a>
     <nav class="navlinks">
-      <a href="#productos">Productos</a><a href="#guias">Guías</a><a href="#proyecto">El proyecto</a>
+      <a href="#productos">Productos</a><a href="#articulos">Artículos</a><a href="#guias">Guías</a><a href="#proyecto">El proyecto</a>
     </nav>
   </div>
 </header>
@@ -424,6 +438,27 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
       <div class="guide-tip"><strong>Importante:</strong> si necesitas evitar la contaminación cruzada por motivos médicos, sigue las recomendaciones de tu profesional sanitario y las medidas de seguridad alimentaria que correspondan a tu situación.</div>
     </div>
   </article>
+</section>
+
+
+<section id="articulos" class="blog-section">
+  <div class="container">
+    <div class="section-heading">
+      <div><h2>📚 Guías y consejos</h2><p>Artículos prácticos para ayudarte a elegir, organizar y disfrutar tus compras con más criterio.</p></div>
+      <a class="btn secondary" href="#articulos">Ver todos</a>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card"><span class="blog-icon">🛒</span><span class="blog-tag">Sin gluten</span><h3>10 productos sin gluten que merece la pena tener en casa</h3><p>Una selección de básicos para empezar o mejorar tu despensa sin gluten.</p><a href="articulos/10-productos-sin-gluten.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🏠</span><span class="blog-tag">Organización</span><h3>Cómo organizar una despensa sin gluten sin gastar de más</h3><p>Ideas sencillas para comprar con criterio y aprovechar mejor lo que ya tienes.</p><a href="articulos/despensa-sin-gluten.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🍳</span><span class="blog-tag">Cocina</span><h3>Los mejores utensilios de cocina para empezar a cocinar en casa</h3><p>Los básicos que realmente pueden ayudarte sin llenar los cajones de cosas innecesarias.</p><a href="articulos/utensilios-cocina-basicos.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🍰</span><span class="blog-tag">Repostería</span><h3>Mejores utensilios para hacer repostería en casa</h3><p>Accesorios prácticos para empezar a preparar bizcochos, tartas y otras recetas.</p><a href="articulos/utensilios-reposteria.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🥨</span><span class="blog-tag">Snacks</span><h3>Snacks sin gluten para llevar al trabajo o de viaje</h3><p>Ideas prácticas para tener algo a mano cuando sales de casa.</p><a href="articulos/snacks-sin-gluten.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">⚖️</span><span class="blog-tag">Repostería</span><h3>Mejores básculas de cocina para repostería</h3><p>Qué características mirar antes de elegir una báscula para tus recetas.</p><a href="articulos/basculas-cocina-reposteria.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">📦</span><span class="blog-tag">Organización</span><h3>Mejores recipientes para organizar una despensa</h3><p>Cómo elegir recipientes que faciliten el orden y el uso diario.</p><a href="articulos/recipientes-despensa.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🎂</span><span class="blog-tag">Repostería</span><h3>Qué comprar para empezar a hacer repostería sin gastar demasiado</h3><p>Una lista de imprescindibles y compras que pueden esperar.</p><a href="articulos/empezar-reposteria.html">Leer artículo →</a></article>
+    </div>
+    <div class="blog-note"><strong>Transparencia:</strong> algunos enlaces de estos artículos pueden ser enlaces de afiliado de Amazon. Si realizas una compra a través de ellos, podemos recibir una comisión sin coste adicional para ti. Comprueba siempre la ficha, ingredientes, alérgenos, precio y disponibilidad actuales en Amazon.</div>
+  </div>
 </section>
 
 <section id="proyecto">
