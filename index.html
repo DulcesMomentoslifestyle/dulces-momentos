@@ -140,6 +140,71 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
 @media(max-width:900px){.dm-quality-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.dm-quality-grid{grid-template-columns:1fr}.dm-cta{display:block}.dm-cta .btn{margin-top:15px}}
 
+
+/* --- Catálogo arriba: hero compacto, banner de ofertas y categorías --- */
+[hidden]{display:none!important}
+.hero{display:block;margin:16px auto 14px;padding:22px 26px}
+.hero .hero-grid{width:100%;margin:0;grid-template-columns:1.4fr .8fr;gap:22px}
+.hero h1{font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-1px;margin:10px 0 8px}
+.hero p{font-size:1rem;line-height:1.5;margin:0}
+.hero .searchbox{margin-top:16px}
+.hero-card{min-height:0;padding:20px}
+.hero-card h2{margin:0 0 6px;font-size:22px;color:#274a36}
+.hero-card .pill{background:var(--mint);border-color:#cfe3d5;color:var(--green)}
+.hero-card .pills{margin-top:12px}
+
+#catalogo{padding:6px 0 26px}
+#categories{scroll-margin-top:88px}
+#productos{margin-top:18px}
+
+.deals-banner{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 14px;padding:16px 20px;border-radius:18px;background:linear-gradient(110deg,#ff5a1f,#e8243c 60%,#c2185b);color:#fff;box-shadow:0 10px 28px rgba(232,36,60,.28);position:relative;overflow:hidden}
+.deals-banner:before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%);transform:translateX(-100%);animation:dealshine 5s ease-in-out infinite}
+@keyframes dealshine{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.deals-banner>*{position:relative}
+.deals-badge{display:inline-block;background:#fff;color:#d62839;font-weight:900;font-size:12px;padding:5px 10px;border-radius:999px;margin-bottom:6px}
+.deals-banner h2{margin:0;font-size:1.35rem;color:#fff}
+.deals-banner p{margin:4px 0 0;font-size:.95rem;color:#fff3ee;max-width:620px;line-height:1.45}
+.deals-cta{flex:none;border:0;border-radius:13px;padding:13px 20px;background:#fff;color:#d62839;font-weight:900;font-size:15px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.deals-cta:hover{filter:brightness(.96)}
+.deals-cta:focus-visible,.cat:focus-visible{outline:3px solid #1f3e2d;outline-offset:2px}
+
+.categories{grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:10px}
+.cat{padding:13px 8px;font-size:14px;font-family:inherit;color:var(--ink)}
+.cat .emoji{font-size:22px;margin-bottom:5px}
+.cat.cat-save{background:#fff4ee;border-color:#ffb199;color:#b3341a}
+.cat.cat-save:hover,.cat.cat-save.active{background:#ffe3d6;border-color:#ff6a33;color:#9b2a12}
+.cat.cat-deals{background:linear-gradient(135deg,#ff5a1f,#e8243c);color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(232,36,60,.3)}
+.cat.cat-deals:hover,.cat.cat-deals.active{background:linear-gradient(135deg,#ff6a33,#f03a4f);color:#fff;border-color:#fff;outline:3px solid #ffb199}
+
+.deals-note{margin:0 0 14px;padding:12px 15px;border-radius:14px;background:#fff1ea;border:1px solid #ffc7b0;color:#7a3217;font-size:14px;line-height:1.5}
+.product{position:relative}
+.product-top{position:relative}
+.deal-badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#ff5a1f,#e8243c);color:#fff;font-size:12px;font-weight:900;padding:6px 10px;border-radius:999px;box-shadow:0 4px 10px rgba(232,36,60,.3)}
+.product.is-deal{border-color:#ffb199;box-shadow:0 8px 24px rgba(232,36,60,.12)}
+.product.is-deal .product-top{background:linear-gradient(135deg,#fff1ea,#ffe3e6)}
+.btn.deal{background:linear-gradient(135deg,#ff5a1f,#e8243c)}
+
+@media(max-width:900px){
+ .hero .hero-grid{grid-template-columns:1fr}
+ .hero-card{display:none}
+}
+@media(max-width:700px){
+ .hero{padding:16px 16px}
+ .hero .hero-grid p{display:none}
+ .hero .searchbox{margin-top:12px}
+ .deals-banner{padding:14px 16px;gap:12px}
+ .deals-banner p{display:none}
+ .deals-banner h2{font-size:1.15rem}
+ .deals-banner{flex-direction:column;align-items:flex-start}
+ .deals-cta{width:100%}
+ .categories{display:flex;overflow-x:auto;gap:8px;padding:2px 2px 8px;scroll-snap-type:x proximity}
+ .cat{flex:none;min-width:104px;scroll-snap-align:start}
+}
+@media(prefers-reduced-motion:reduce){
+ .deals-banner:before{animation:none;display:none}
+ html{scroll-behavior:auto}
+}
+
 </style>
   <!-- SEO: sustituir este dominio por el dominio definitivo cuando lo publiques -->
   <link rel="canonical" href="https://www.dulcesmomentoslifestyle.es/">
@@ -193,48 +258,42 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
   </div>
 </section>
 
-<section>
+<section id="catalogo">
 <div class="container">
-  <div class="section-head"><div><h2>Explora por categoría</h2><p>Filtra la selección con un toque.</p></div></div>
-  <div class="categories" id="categories">
-    <button class="cat active" data-cat="todos"><span class="emoji">✨</span>Todo</button>
-    <button class="cat" data-cat="sin-gluten"><span class="emoji">🥖</span>Sin gluten</button>
-    <button class="cat" data-cat="snacks"><span class="emoji">🍪</span>Snacks</button>
-    <button class="cat" data-cat="cocina"><span class="emoji">🍳</span>Cocina</button>
-    <button class="cat" data-cat="deporte"><span class="emoji">🏃</span>Deporte</button>
-    <button class="cat" data-cat="movilidad"><span class="emoji">🚲</span>Movilidad</button>
-  </div>
-</div>
-</section>
-
-<section id="productos">
-<div class="container">
-  <div class="section-head"><div><h2>Selección inicial</h2><p>24 opciones y búsquedas iniciales. El precio y la disponibilidad se consultan en Amazon.</p></div></div>
-  <div class="notice" style="margin-bottom:18px"><strong>Cómo funciona:</strong> hemos empezado con referencias orientativas y búsquedas en Amazon. El enlace abre resultados de Amazon para que puedas consultar la ficha, el precio, la disponibilidad y la información actual antes de comprar.</div>
-  
-<section class="hero">
-  <div class="hero-copy">
-    <span class="eyebrow">DULCES MOMENTOS LIFESTYLE</span>
-    <h1>Encuentra productos para disfrutar de una vida más fácil y sin gluten.</h1>
-    <p>Selecciones de alimentación sin gluten, cocina, deporte y movilidad, pensadas para descubrir opciones interesantes sin perder tiempo buscando.</p>
-    <div class="hero-actions">
-      <a class="btn primary" href="#catalogo">Explorar productos</a>
-      <a class="btn secondary" href="#guias-completas">Ver nuestras guías</a>
+  <div class="deals-banner" role="region" aria-label="Ofertas y bajadas de precio">
+    <div>
+      <span class="deals-badge">🔥 OFERTAS</span>
+      <h2>Bajadas de precio y grandes descuentos</h2>
+      <p>Descubre las ofertas que Amazon destaca ahora mismo. Comprueba siempre el precio actual antes de comprar.</p>
     </div>
+    <button class="deals-cta" data-cat="ofertas" type="button">Ver ofertas →</button>
   </div>
-  <div class="hero-card">
-    <div class="hero-icon">🍪</div>
-    <strong>Selección Dulces Momentos</strong>
-    <span>Productos y búsquedas seleccionadas para empezar.</span>
-  </div>
-</section>
 
-<section class="quick-links" aria-label="Categorías destacadas">
-  <a href="sin-gluten.html">🍞 <span>Sin gluten</span></a>
-  <a href="snacks.html">🍪 <span>Snacks</span></a>
-  <a href="cocina.html">🍳 <span>Cocina</span></a>
-  <a href="deporte.html">🏃 <span>Deporte</span></a>
-  <a href="movilidad.html">🚲 <span>Movilidad</span></a>
+  <div class="categories" id="categories">
+    <button class="cat cat-deals" data-cat="ofertas" type="button"><span class="emoji">🔥</span>Ofertas</button>
+    <button class="cat active" data-cat="todos" type="button"><span class="emoji">✨</span>Todo</button>
+    <button class="cat" data-cat="sin-gluten" type="button"><span class="emoji">🥖</span>Sin gluten</button>
+    <button class="cat cat-save" data-cat="descuentos-sin-gluten" type="button"><span class="emoji">💸</span>Descuentos sin gluten</button>
+    <button class="cat" data-cat="snacks" type="button"><span class="emoji">🍪</span>Snacks</button>
+    <button class="cat" data-cat="vida-sana" type="button"><span class="emoji">🥗</span>Vida sana</button>
+    <button class="cat" data-cat="cocina" type="button"><span class="emoji">🍳</span>Cocina</button>
+    <button class="cat" data-cat="deporte" type="button"><span class="emoji">🏃</span>Deporte</button>
+    <button class="cat" data-cat="movilidad" type="button"><span class="emoji">🚲</span>Movilidad</button>
+  </div>
+
+  <div id="productos">
+    <div class="toolbar">
+      <select id="sort" class="select" onchange="renderProducts()" aria-label="Ordenar productos">
+        <option value="featured">Destacados</option><option value="name">Nombre A-Z</option>
+      </select>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="deals-note" id="dealsNote" hidden><strong>Las ofertas cambian a diario.</strong> El precio y el descuento que cuentan son los que ves en Amazon al entrar. Son enlaces de afiliado.</div>
+    <div class="products" id="products"></div>
+  </div>
+
+  <div class="notice" style="margin-top:18px"><strong>Cómo funciona:</strong> hemos empezado con referencias orientativas y búsquedas en Amazon. El enlace abre resultados de Amazon para que puedas consultar la ficha, el precio, la disponibilidad y la información actual antes de comprar.</div>
+</div>
 </section>
 
 <section class="featured">
@@ -258,7 +317,6 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
   <div><b>🛒 Compra informado</b><span>El precio y disponibilidad se consultan en Amazon.</span></div>
 </section>
 
-
 <section class="seo-categories" id="categorias">
   <div class="section-heading">
     <div><span class="eyebrow">CATEGORÍAS</span><h2>Explora por temática</h2></div>
@@ -272,7 +330,6 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
     <a href="movilidad.html"><strong>Movilidad</strong><span>Accesorios para desplazamientos.</span></a>
   </div>
 </section>
-
 
 <section id="criterios-dm" class="dm-quality">
   <div class="section-heading">
@@ -290,16 +347,6 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
 <section class="dm-cta">
   <div><span class="eyebrow">DULCES MOMENTOS</span><h2>¿Buscas algo concreto?</h2><p>Empieza por una categoría o utiliza el buscador para encontrar una selección relacionada con lo que necesitas.</p></div>
   <a class="btn primary" href="#catalogo">Buscar productos →</a>
-</section>
-
-<div class="toolbar">
-    <select id="sort" class="select" onchange="renderProducts()">
-      <option value="featured">Destacados</option><option value="name">Nombre A-Z</option>
-    </select>
-    <span class="count" id="count"></span>
-  </div>
-  <div class="products" id="products"></div>
-</div>
 </section>
 
 <section id="guias">
@@ -421,6 +468,8 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
 */
 const TAG="vidasanalifes-21";
 
+const AMAZON_DEALS="https://www.amazon.es/gp/goldbox?tag="+TAG;
+
 const products=[
  {id:1,cat:"sin-gluten",icon:"🍞",name:"Schär Pan de Molde sin Gluten",desc:"Pan de molde sin gluten de una de las marcas más conocidas de esta categoría.",term:"Schär Pan Molde sin Gluten"},
  {id:2,cat:"sin-gluten",icon:"🍞",name:"Bimbo Pan de Molde Sin Gluten",desc:"Pan de molde sin gluten y sin lactosa; comprueba siempre la ficha y el etiquetado vigente.",term:"Bimbo Pan de molde sin gluten sin lactosa"},
@@ -445,37 +494,98 @@ const products=[
  {id:21,cat:"movilidad",icon:"🚲",name:"Candados para bicicleta",desc:"Accesorios para proteger la bicicleta durante desplazamientos y paradas.",term:"candado bicicleta"},
  {id:22,cat:"movilidad",icon:"💡",name:"Luces para bicicleta",desc:"Iluminación para mejorar la visibilidad durante desplazamientos.",term:"luces bicicleta delantera trasera"},
  {id:23,cat:"movilidad",icon:"🎒",name:"Mochilas para movilidad urbana",desc:"Mochilas prácticas para desplazamientos cotidianos.",term:"mochila bicicleta urbana"},
- {id:24,cat:"movilidad",icon:"🛴",name:"Accesorios para movilidad urbana",desc:"Selección general de accesorios para desplazamientos personales.",term:"accesorios movilidad urbana"}
+ {id:24,cat:"movilidad",icon:"🛴",name:"Accesorios para movilidad urbana",desc:"Selección general de accesorios para desplazamientos personales.",term:"accesorios movilidad urbana"},
+
+ /* ---------- OFERTAS ----------
+    Enlaces a las ofertas de Amazon (cambian solos, no hay precios que mantener).
+    Para destacar un producto concreto en Ofertas, añade al producto: deal:"Bajada de precio"
+    No escribas importes ni porcentajes: se desactualizan y Amazon no lo permite en afiliados. */
+ {id:25,cat:"ofertas",icon:"🔥",name:"Ofertas del día en Amazon",desc:"Los descuentos que Amazon destaca hoy. Cambian a diario, así que entra para ver cuáles hay.",url:AMAZON_DEALS,deal:"Cambia cada día"},
+ {id:28,cat:"ofertas",icon:"🍳",name:"Ofertas en cocina y repostería",desc:"Básculas, moldes y utensilios rebajados.",term:"cocina repostería oferta",deal:"Descuentos",cta:"Ver ofertas"},
+ {id:29,cat:"ofertas",icon:"🏃",name:"Ofertas en deporte",desc:"Mochilas, botellas y esterillas con bajada de precio.",term:"deporte fitness oferta",deal:"Descuentos",cta:"Ver ofertas"},
+ {id:30,cat:"ofertas",icon:"🚲",name:"Ofertas en movilidad y bicicleta",desc:"Luces, candados y accesorios para desplazarte con descuento.",term:"accesorios bicicleta oferta",deal:"Descuentos",cta:"Ver ofertas"},
+
+ /* ---------- DESCUENTOS SIN GLUTEN ----------
+    Todas llevan deal:"..." y por eso salen también en Ofertas. */
+ {id:31,cat:"descuentos-sin-gluten",icon:"💸",name:"Grandes descuentos sin gluten",desc:"Productos sin gluten con las mayores bajadas de precio que haya ahora mismo en Amazon.",term:"sin gluten descuento",deal:"Grandes descuentos",cta:"Ver descuentos"},
+ {id:26,cat:"descuentos-sin-gluten",icon:"🍞",name:"Pan y bollería sin gluten con descuento",desc:"Pan de molde, panecillos y bollería sin gluten rebajados.",term:"pan sin gluten oferta",deal:"Bajadas de precio",cta:"Ver descuentos"},
+ {id:27,cat:"descuentos-sin-gluten",icon:"🍪",name:"Galletas y snacks sin gluten con descuento",desc:"Galletas y aperitivos sin gluten con bajada de precio.",term:"galletas snacks sin gluten oferta",deal:"Descuentos",cta:"Ver descuentos"},
+ {id:41,cat:"descuentos-sin-gluten",icon:"🍝",name:"Pasta y harinas sin gluten con descuento",desc:"Pasta, harinas y preparados sin gluten en oferta.",term:"pasta harina sin gluten oferta",deal:"Descuentos",cta:"Ver descuentos"},
+ {id:42,cat:"descuentos-sin-gluten",icon:"🥣",name:"Cereales y desayunos sin gluten con descuento",desc:"Cereales, copos y desayunos sin gluten rebajados.",term:"cereales desayuno sin gluten oferta",deal:"Descuentos",cta:"Ver descuentos"},
+ {id:43,cat:"descuentos-sin-gluten",icon:"🍫",name:"Chocolates y dulces sin gluten con descuento",desc:"Caprichos dulces sin gluten con bajada de precio; revisa el etiquetado.",term:"chocolate dulces sin gluten oferta",deal:"Descuentos",cta:"Ver descuentos"},
+ {id:44,cat:"descuentos-sin-gluten",icon:"📦",name:"Packs y formatos de ahorro sin gluten",desc:"Packs y formatos grandes para ahorrar en los básicos de la despensa.",term:"pack ahorro sin gluten",deal:"Packs de ahorro",cta:"Ver descuentos"},
+
+ /* ---------- VIDA SANA ----------
+    La primera lleva deal:"..." y por eso sale también en Ofertas. */
+ {id:32,cat:"vida-sana",icon:"🏷️",name:"Descuentos en vida sana",desc:"Alimentación saludable, infusiones y básicos de despensa con bajada de precio.",term:"alimentación saludable oferta",deal:"Bajadas de precio",cta:"Ver descuentos"},
+ {id:33,cat:"vida-sana",icon:"🥜",name:"Frutos secos y semillas",desc:"Para picar entre horas o añadir a desayunos y ensaladas; revisa siempre el etiquetado.",term:"frutos secos naturales semillas"},
+ {id:34,cat:"vida-sana",icon:"🥣",name:"Avena sin gluten certificada",desc:"Copos de avena etiquetados sin gluten; comprueba la certificación en la ficha del producto.",term:"avena sin gluten certificada"},
+ {id:35,cat:"vida-sana",icon:"🍫",name:"Barritas y snacks saludables sin gluten",desc:"Opciones prácticas para llevar en el bolso, la mochila o el trabajo.",term:"barritas snacks saludables sin gluten"},
+ {id:36,cat:"vida-sana",icon:"🫖",name:"Infusiones y tés",desc:"Una pausa tranquila a cualquier hora del día.",term:"infusiones té hierbas"},
+ {id:37,cat:"vida-sana",icon:"🥤",name:"Proteína vegetal sin gluten",desc:"Para batidos y recetas; mira ingredientes y alérgenos antes de comprar.",term:"proteína vegetal sin gluten"},
+ {id:38,cat:"vida-sana",icon:"🌾",name:"Harinas alternativas",desc:"Garbanzo, arroz, maíz o almendra para variar en repostería y masas sin gluten.",term:"harina garbanzo arroz almendra sin gluten"},
+ {id:39,cat:"vida-sana",icon:"🫒",name:"Aceite de oliva virgen extra",desc:"Un básico de la cocina mediterránea para aliñar y cocinar.",term:"aceite oliva virgen extra"},
+ {id:40,cat:"vida-sana",icon:"🍲",name:"Cocina saludable: vaporeras y freidoras de aire",desc:"Utensilios para cocinar con menos grasa y de forma sencilla.",term:"vaporera freidora de aire cocina saludable"}
 ];
 
+const CATS=["ofertas","todos","sin-gluten","descuentos-sin-gluten","snacks","vida-sana","cocina","deporte","movilidad"];
 let activeCat="todos", query="";
 
 function amazonSearch(term){
  return "https://www.amazon.es/s?k="+encodeURIComponent(term)+"&tag="+TAG;
 }
+function isDeal(p){return p.cat==="ofertas"||!!p.deal}
 function renderProducts(){
  const grid=document.getElementById("products");
- let arr=products.filter(p=>(activeCat==="todos"||p.cat===activeCat)&&(!query||((p.name+" "+p.desc+" "+p.term).toLowerCase().includes(query.toLowerCase()))));
+ const q=query.toLowerCase();
+ let arr=products.filter(p=>{
+  const inCat=activeCat==="todos"?p.cat!=="ofertas":activeCat==="ofertas"?isDeal(p):p.cat===activeCat;
+  const match=!q||((p.name+" "+p.desc+" "+(p.term||"")).toLowerCase().includes(q));
+  return inCat&&match;
+ });
  if(document.getElementById("sort").value==="name") arr.sort((a,b)=>a.name.localeCompare(b.name,"es"));
- document.getElementById("count").textContent=arr.length+" opciones";
- grid.innerHTML=arr.length?arr.map(p=>`
- <article class="product">
-  <div class="product-top">${p.icon}</div>
+ document.getElementById("count").textContent=arr.length+(arr.length===1?" opción":" opciones");
+ document.getElementById("dealsNote").hidden=activeCat!=="ofertas";
+ grid.innerHTML=arr.length?arr.map(p=>{
+  const deal=isDeal(p);
+  const href=p.url||amazonSearch(p.term);
+  return `
+ <article class="product${deal?" is-deal":""}">
+  <div class="product-top">${deal?`<span class="deal-badge">🔥 ${p.deal||"Oferta"}</span>`:""}${p.icon}</div>
   <div class="product-body">
    <span class="tag">${label(p.cat)}</span><h3>${p.name}</h3><p>${p.desc}</p>
-   <div class="meta"><span class="stars">Selección editorial</span><span class="amazon">Amazon.es</span></div>
+   <div class="meta"><span class="stars">${deal?"Ofertas en Amazon":"Selección editorial"}</span><span class="amazon">Amazon.es</span></div>
    <div class="actions">
-    <div class="affiliate-label">Enlace de afiliado</div><a class="btn" href="${amazonSearch(p.term)}" target="_blank" rel="nofollow sponsored noopener">Buscar en Amazon</a>
+    <div class="affiliate-label">Enlace de afiliado</div><a class="btn${deal?" deal":""}" href="${href}" target="_blank" rel="nofollow sponsored noopener">${p.cta||"Buscar en Amazon"}</a>
     <button class="fav" title="Guardar" onclick="toggleFav(${p.id},this)">♡</button>
    </div>
   </div>
- </article>`).join(""):`<div class="empty">No hemos encontrado nada con esa búsqueda. Prueba con otra palabra.</div>`;
+ </article>`}).join(""):`<div class="empty">No hemos encontrado nada con esa búsqueda. Prueba con otra palabra.</div>`;
 }
-function label(c){return {"sin-gluten":"Sin gluten","snacks":"Snacks","cocina":"Cocina","deporte":"Deporte","movilidad":"Movilidad"}[c]||c}
-function applySearch(){query=document.getElementById("search").value.trim();renderProducts();document.getElementById("productos").scrollIntoView({behavior:"smooth"})}
+function label(c){return {"ofertas":"Ofertas","sin-gluten":"Sin gluten","descuentos-sin-gluten":"Descuentos sin gluten","snacks":"Snacks","vida-sana":"Vida sana","cocina":"Cocina","deporte":"Deporte","movilidad":"Movilidad"}[c]||c}
+
+/* Baja hasta los productos solo si no se ven ya en pantalla */
+function revealProducts(){
+ const prods=document.getElementById("productos");
+ const top=prods.getBoundingClientRect().top;
+ /* Sube/baja hasta las categorías, así quedan visibles justo encima de los productos */
+ if(top>window.innerHeight*0.55||top<0) document.getElementById("categories").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function setCategory(cat,scroll){
+ activeCat=cat;
+ document.querySelectorAll(".cat").forEach(b=>b.classList.toggle("active",b.dataset.cat===cat));
+ renderProducts();
+ if(scroll) revealProducts();
+}
+function applySearch(){
+ query=document.getElementById("search").value.trim();
+ setCategory("todos",false);
+ revealProducts();
+}
 document.getElementById("search").addEventListener("keydown",e=>{if(e.key==="Enter")applySearch()});
-document.querySelectorAll(".cat").forEach(btn=>btn.addEventListener("click",()=>{
- document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));btn.classList.add("active");activeCat=btn.dataset.cat;renderProducts()
+/* Cualquier elemento con data-cat (botones, banner, "Ver selección") abre esa categoría */
+document.querySelectorAll("[data-cat]").forEach(el=>el.addEventListener("click",e=>{
+ e.preventDefault();setCategory(el.dataset.cat,true);
 }));
 function toggleFav(id,btn){
  const fav=JSON.parse(localStorage.getItem("dm-favs")||"[]");
@@ -483,18 +593,16 @@ function toggleFav(id,btn){
  localStorage.setItem("dm-favs",JSON.stringify(fav));
 }
 document.getElementById("year").textContent=new Date().getFullYear();
-renderProducts();
+
+/* Enlaces directos: ?cat=ofertas  ·  ?q=pasta  (útil para compartir en Facebook) */
+const params=new URLSearchParams(location.search);
+const q0=params.get("q"), c0=params.get("cat");
+if(q0){query=q0.trim();document.getElementById("search").value=query}
+if(c0&&CATS.includes(c0)) activeCat=c0;
+setCategory(activeCat,false);
+if(c0||q0) setTimeout(revealProducts,60);
 </script>
 
-<script>
-document.querySelectorAll('[data-cat]').forEach(function(el){
-  el.addEventListener('click', function(){
-    var cat=this.getAttribute('data-cat');
-    var select=document.querySelector('#category');
-    if(select){ select.value=cat; select.dispatchEvent(new Event('change')); }
-  });
-});
-</script>
 
 
 <footer class="site-footer">
