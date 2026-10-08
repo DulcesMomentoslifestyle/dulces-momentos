@@ -5,18 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Dulces Momentos Lifestyle: selección de productos sin gluten, cocina, deporte y movilidad.">
 <title>Dulces Momentos Lifestyle | Productos sin gluten, cocina, deporte y movilidad</title>
-<!-- Vista previa al compartir en Facebook, WhatsApp, etc. -->
-<meta property="og:type" content="website">
-<meta property="og:locale" content="es_ES">
-<meta property="og:site_name" content="Dulces Momentos Lifestyle">
-<meta property="og:title" content="Dulces Momentos Lifestyle | Productos sin gluten, vida sana y ofertas">
-<meta property="og:description" content="Selección de productos sin gluten, vida sana, cocina, deporte y movilidad, con ofertas y descuentos.">
-<meta property="og:url" content="https://dulcesmomentoslifestyle.github.io/dulces-momentos/">
-<meta property="og:image" content="https://dulcesmomentoslifestyle.github.io/dulces-momentos/imagen-compartir.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-
 <style>
 :root{
   --green:#2f6b4f;--green2:#4d8b68;--mint:#eaf5ed;--cream:#fffaf0;
@@ -217,6 +205,62 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
  html{scroll-behavior:auto}
 }
 
+
+/* --- Biblioteca de artículos --- */
+.blog-section{max-width:1120px;margin:38px auto;padding:0 0 10px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.blog-card{background:#fff;border:1px solid #e0e7e1;border-radius:20px;padding:22px;box-shadow:0 7px 20px rgba(40,70,50,.05);display:flex;flex-direction:column}
+.blog-icon{font-size:2.2rem}
+.blog-card h3{margin:10px 0 8px;color:#294d38;font-size:1.2rem}
+.blog-card p{color:#68766d;line-height:1.55;margin:0 0 15px;font-size:.94rem}
+.blog-card a{color:#39734d;font-weight:850;text-decoration:none;margin-top:auto}
+.blog-card .blog-tag{display:inline-block;font-size:.72rem;font-weight:850;color:#39734d;background:#edf5ee;border-radius:999px;padding:6px 9px;margin-top:2px}
+.blog-note{margin-top:18px;padding:14px 16px;border-radius:14px;background:#fff7df;border:1px solid #f0dfab;color:#67521b;font-size:.9rem;line-height:1.5}
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+
+
+/* --- Recetas sin gluten --- */
+.recipes-section{max-width:1120px;margin:38px auto}
+.recipes-intro{background:linear-gradient(135deg,#f7f2df,#edf7ef);border:1px solid #dfe8dd;border-radius:22px;padding:24px;margin-bottom:18px}
+.recipes-intro h2{margin:0 0 8px;color:#294d38}
+.recipes-intro p{margin:0;color:#5f6e64;line-height:1.6;max-width:850px}
+.recipe-filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 18px}
+.recipe-filter{border:1px solid #dfe7df;background:#fff;color:#315b40;border-radius:999px;padding:9px 13px;font:inherit;font-size:.9rem;font-weight:800;cursor:pointer}
+.recipe-filter:hover,.recipe-filter.active{background:#edf6ef;border-color:#b9d4c0;color:#39734d}
+.recipe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.recipe-card{background:#fff;border:1px solid #e0e7e1;border-radius:20px;padding:20px;box-shadow:0 7px 20px rgba(40,70,50,.05);display:flex;flex-direction:column}
+.recipe-card.hidden{display:none}
+.recipe-icon{font-size:2.6rem}
+.recipe-tag{display:inline-block;margin-top:9px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:900;color:#568363}
+.recipe-card h3{margin:7px 0 7px;color:#294d38;font-size:1.18rem}
+.recipe-card p{margin:0 0 13px;color:#69766e;line-height:1.5;font-size:.94rem}
+.recipe-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.recipe-meta span{background:#f4f7f4;border:1px solid #e1e8e2;border-radius:999px;padding:6px 9px;font-size:.78rem;color:#526158}
+.recipe-card a{margin-top:14px;color:#39734d;font-weight:900;text-decoration:none}
+.recipe-disclaimer{margin-top:18px;padding:14px 16px;border-radius:14px;background:#fff7df;border:1px solid #f0dfab;color:#67521b;font-size:13px;line-height:1.55}
+.recipe-page{max-width:920px;margin:34px auto 50px;padding:0 4%}
+.recipe-hero{background:linear-gradient(135deg,#f5f1df,#e8f4ea);border:1px solid #dce8d9;border-radius:24px;padding:28px;margin-bottom:20px}
+.recipe-hero .recipe-tag{margin-top:0}
+.recipe-hero h1{font-size:clamp(2rem,5vw,3.3rem);letter-spacing:-1px;line-height:1.05;margin:9px 0 10px;color:#254a36}
+.recipe-hero p{margin:0;color:#56655c;line-height:1.6;font-size:1.02rem}
+.recipe-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.recipe-box{background:#fff;border:1px solid #e0e7e1;border-radius:20px;padding:22px;box-shadow:0 7px 20px rgba(40,70,50,.05)}
+.recipe-box h2{margin:0 0 11px;color:#294d38;font-size:1.35rem}
+.recipe-box ul,.recipe-box ol{padding-left:21px;color:#526158;line-height:1.7}
+.recipe-box li{margin:5px 0}
+.recipe-info{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.recipe-info span{background:#edf6ef;border:1px solid #d6e7da;color:#315b40;border-radius:999px;padding:7px 10px;font-size:.82rem;font-weight:800}
+.recipe-tip{background:#f6f1df;border-left:4px solid #9dbb86;padding:12px 14px;border-radius:8px;color:#4c5b50;line-height:1.55;margin-top:16px}
+.recipe-shop{margin-top:18px;background:#f7faf7;border:1px solid #dfe8df;border-radius:16px;padding:18px}
+.recipe-shop h3{margin:0 0 8px;color:#294d38}
+.recipe-shop p{margin:0 0 11px;color:#657269;line-height:1.5;font-size:.92rem}
+.recipe-shop a{display:inline-block;background:#39734d;color:#fff;padding:10px 13px;border-radius:11px;font-weight:800;text-decoration:none;margin:5px 7px 0 0}
+.recipe-back{display:inline-block;margin-bottom:16px;color:#39734d;font-weight:900;text-decoration:none}
+.recipe-disclosure{margin-top:18px;padding:14px 16px;border-radius:14px;background:#fff7df;border:1px solid #f0dfab;color:#67521b;font-size:13px;line-height:1.55}
+@media(max-width:900px){.recipe-grid{grid-template-columns:repeat(2,1fr)}.recipe-layout{grid-template-columns:1fr}}
+@media(max-width:600px){.recipe-grid{grid-template-columns:1fr}.recipe-page{padding:0 4%}.recipe-hero{padding:22px 18px}}
+
 </style>
   <!-- SEO: sustituir este dominio por el dominio definitivo cuando lo publiques -->
   <link rel="canonical" href="https://www.dulcesmomentoslifestyle.es/">
@@ -245,7 +289,7 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
       <span>Dulces Momentos<small>Lifestyle · Sin gluten</small></span>
     </a>
     <nav class="navlinks">
-      <a href="#productos">Productos</a><a href="#guias">Guías</a><a href="#proyecto">El proyecto</a>
+      <a href="#productos">Productos</a><a href="#recetas-sin-gluten">Recetas</a><a href="#articulos">Artículos</a><a href="#guias">Guías</a><a href="#proyecto">El proyecto</a>
     </nav>
   </div>
 </header>
@@ -438,6 +482,124 @@ footer p{margin:5px 0;color:#bfd0c5;font-size:13px}
   </article>
 </section>
 
+
+<section id="recetas-sin-gluten" class="recipes-section">
+  <div class="recipes-intro">
+    <span class="eyebrow">RECETAS SIN GLUTEN</span>
+    <h2>🍰 Recetas fáciles para disfrutar en casa</h2>
+    <p>Recetas caseras, sencillas y pensadas para el día a día. Hemos organizado las primeras diez para que puedas empezar por desayunos, dulces, panes, masas, snacks y comidas.</p>
+  </div>
+  <div class="recipe-filters" role="tablist" aria-label="Filtrar recetas">
+    <button class="recipe-filter active" data-recipe-filter="todos" type="button">Todas</button>
+    <button class="recipe-filter" data-recipe-filter="Desayunos" type="button">Desayunos</button>
+    <button class="recipe-filter" data-recipe-filter="Dulces y repostería" type="button">Dulces</button>
+    <button class="recipe-filter" data-recipe-filter="Comidas" type="button">Comidas</button>
+    <button class="recipe-filter" data-recipe-filter="Pan y masas" type="button">Pan y masas</button>
+  </div>
+  <div class="recipe-grid">
+    <article class="recipe-card" data-recipe-category="Dulces y repostería">
+      <span class="recipe-icon">🍫</span>
+      <span class="recipe-tag">Dulces y repostería</span>
+      <h3>Brownie de chocolate sin gluten</h3>
+      <p>Un brownie jugoso y fácil de preparar, pensado para disfrutar de un postre de chocolate con ingredientes sencillos.</p>
+      <div class="recipe-meta"><span>⏱️ 40 min</span><span>⭐ Fácil</span><span>🍽️ 8 raciones</span></div>
+      <a href="recetas/brownie-chocolate-sin-gluten.html">Ver receta →</a>
+    </article>
+    <article class="recipe-card" data-recipe-category="Dulces y repostería">
+      <span class="recipe-icon">🍰</span>
+      <span class="recipe-tag">Dulces y repostería</span>
+      <h3>Bizcocho de yogur sin gluten</h3>
+      <p>Una versión sencilla del clásico bizcocho de yogur, adaptable a la harina sin gluten que tengas en casa.</p>
+      <div class="recipe-meta"><span>⏱️ 50 min</span><span>⭐ Fácil</span><span>🍽️ 8-10 raciones</span></div>
+      <a href="recetas/bizcocho-yogur-sin-gluten.html">Ver receta →</a>
+    </article>
+    <article class="recipe-card" data-recipe-category="Desayunos">
+      <span class="recipe-icon">🥞</span>
+      <span class="recipe-tag">Desayunos</span>
+      <h3>Tortitas sin gluten fáciles</h3>
+      <p>Tortitas suaves para desayunos o meriendas. Combínalas con fruta, yogur o el topping que prefieras.</p>
+      <div class="recipe-meta"><span>⏱️ 20 min</span><span>⭐ Fácil</span><span>🍽️ 8-10 tortitas</span></div>
+      <a href="recetas/tortitas-sin-gluten.html">Ver receta →</a>
+    </article>
+    <article class="recipe-card" data-recipe-category="Dulces y repostería">
+      <span class="recipe-icon">🍪</span>
+      <span class="recipe-tag">Dulces y repostería</span>
+      <h3>Galletas de chocolate sin gluten</h3>
+      <p>Galletas caseras crujientes por fuera y tiernas por dentro, perfectas para acompañar el café o la merienda.</p>
+      <div class="recipe-meta"><span>⏱️ 35 min</span><span>⭐ Fácil</span><span>🍽️ 12-14 galletas</span></div>
+      <a href="recetas/galletas-chocolate-sin-gluten.html">Ver receta →</a>
+    </article>
+    <article class="recipe-card" data-recipe-category="Comidas">
+      <span class="recipe-icon">🍕</span>
+      <span class="recipe-tag">Comidas</span>
+      <h3>Pizza casera sin gluten</h3>
+      <p>Una base casera sencilla para preparar pizza en casa con tus ingredientes favoritos.</p>
+      <div class="recipe-meta"><span>⏱️ 55 min</span><span>⭐ Media</span><span>🍽️ 2 pizzas pequeñas</span></div>
+      <a href="recetas/pizza-casera-sin-gluten.html">Ver receta →</a>
+    </article>
+    <article class="recipe-card" data-recipe-category="Pan y masas">
+      <span class="recipe-icon">🍞</span>
+      <span class="recipe-tag">Pan y masas</span>
+      <h3>Pan casero sin gluten fácil</h3>
+      <p>Un pan básico para empezar en casa, con una masa sencilla que no requiere amasado intenso.</p>
+      <div class="recipe-meta"><span>⏱️ 1 h 35 min</span><span>⭐ Media</span><span>🍽️ 1 pan</span></div>
+      <a href="recetas/pan-casero-sin-gluten.html">Ver receta →</a>
+    </article>
+    <article class="recipe-card" data-recipe-category="Dulces y repostería">
+      <span class="recipe-icon">🧁</span>
+      <span class="recipe-tag">Dulces y repostería</span>
+      <h3>Magdalenas caseras sin gluten</h3>
+      <p>Magdalenas tiernas y sencillas para desayunos y meriendas, con un toque de limón.</p>
+      <div class="recipe-meta"><span>⏱️ 35 min</span><span>⭐ Fácil</span><span>🍽️ 10-12 unidades</span></div>
+      <a href="recetas/magdalenas-sin-gluten.html">Ver receta →</a>
+    </article>
+    <article class="recipe-card" data-recipe-category="Dulces y repostería">
+      <span class="recipe-icon">🍎</span>
+      <span class="recipe-tag">Dulces y repostería</span>
+      <h3>Bizcocho de manzana sin gluten</h3>
+      <p>Un bizcocho húmedo con manzana y canela que funciona muy bien para el desayuno o la merienda.</p>
+      <div class="recipe-meta"><span>⏱️ 55 min</span><span>⭐ Fácil</span><span>🍽️ 8 raciones</span></div>
+      <a href="recetas/bizcocho-manzana-sin-gluten.html">Ver receta →</a>
+    </article>
+    <article class="recipe-card" data-recipe-category="Pan y masas">
+      <span class="recipe-icon">🥪</span>
+      <span class="recipe-tag">Pan y masas</span>
+      <h3>Pan de molde casero sin gluten</h3>
+      <p>Un pan de molde suave para tostadas, desayunos y bocadillos, preparado con una mezcla específica para pan sin gluten.</p>
+      <div class="recipe-meta"><span>⏱️ 1 h 40 min</span><span>⭐ Media</span><span>🍽️ 1 molde</span></div>
+      <a href="recetas/pan-molde-sin-gluten.html">Ver receta →</a>
+    </article>
+    <article class="recipe-card" data-recipe-category="Dulces y repostería">
+      <span class="recipe-icon">🍌</span>
+      <span class="recipe-tag">Dulces y repostería</span>
+      <h3>Bizcocho de plátano sin gluten</h3>
+      <p>Una receta de aprovechamiento para utilizar plátanos maduros y conseguir un bizcocho aromático y jugoso.</p>
+      <div class="recipe-meta"><span>⏱️ 55 min</span><span>⭐ Fácil</span><span>🍽️ 8 raciones</span></div>
+      <a href="recetas/bizcocho-platano-sin-gluten.html">Ver receta →</a>
+    </article>
+  </div>
+  <div class="recipe-disclaimer"><strong>Importante:</strong> estas recetas utilizan ingredientes que deben comprobarse en su envase o ficha concreta. Para una dieta estricta sin gluten, revisa el etiquetado, los alérgenos y las medidas necesarias para evitar la contaminación cruzada según tus circunstancias.</div>
+</section>
+<section id="articulos" class="blog-section">
+  <div class="container">
+    <div class="section-heading">
+      <div><h2>📚 Guías y consejos</h2><p>Artículos prácticos para ayudarte a elegir, organizar y disfrutar tus compras con más criterio.</p></div>
+      <a class="btn secondary" href="#articulos">Ver todos</a>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card"><span class="blog-icon">🛒</span><span class="blog-tag">Sin gluten</span><h3>10 productos sin gluten que merece la pena tener en casa</h3><p>Una selección de básicos para empezar o mejorar tu despensa sin gluten.</p><a href="10-productos-sin-gluten.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🏠</span><span class="blog-tag">Organización</span><h3>Cómo organizar una despensa sin gluten sin gastar de más</h3><p>Ideas sencillas para comprar con criterio y aprovechar mejor lo que ya tienes.</p><a href="despensa-sin-gluten.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🍳</span><span class="blog-tag">Cocina</span><h3>Los mejores utensilios de cocina para empezar a cocinar en casa</h3><p>Los básicos que realmente pueden ayudarte sin llenar los cajones de cosas innecesarias.</p><a href="utensilios-cocina-basicos.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🍰</span><span class="blog-tag">Repostería</span><h3>Mejores utensilios para hacer repostería en casa</h3><p>Accesorios prácticos para empezar a preparar bizcochos, tartas y otras recetas.</p><a href="utensilios-reposteria.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🥨</span><span class="blog-tag">Snacks</span><h3>Snacks sin gluten para llevar al trabajo o de viaje</h3><p>Ideas prácticas para tener algo a mano cuando sales de casa.</p><a href="snacks-sin-gluten.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">⚖️</span><span class="blog-tag">Repostería</span><h3>Mejores básculas de cocina para repostería</h3><p>Qué características mirar antes de elegir una báscula para tus recetas.</p><a href="basculas-cocina-reposteria.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">📦</span><span class="blog-tag">Organización</span><h3>Mejores recipientes para organizar una despensa</h3><p>Cómo elegir recipientes que faciliten el orden y el uso diario.</p><a href="recipientes-despensa.html">Leer artículo →</a></article>
+      <article class="blog-card"><span class="blog-icon">🎂</span><span class="blog-tag">Repostería</span><h3>Qué comprar para empezar a hacer repostería sin gastar demasiado</h3><p>Una lista de imprescindibles y compras que pueden esperar.</p><a href="empezar-reposteria.html">Leer artículo →</a></article>
+    </div>
+    <div class="blog-note"><strong>Transparencia:</strong> algunos enlaces de estos artículos pueden ser enlaces de afiliado de Amazon. Si realizas una compra a través de ellos, podemos recibir una comisión sin coste adicional para ti. Comprueba siempre la ficha, ingredientes, alérgenos, precio y disponibilidad actuales en Amazon.</div>
+  </div>
+</section>
+
 <section id="proyecto">
 <div class="container">
 <div class="about">
@@ -613,6 +775,16 @@ if(q0){query=q0.trim();document.getElementById("search").value=query}
 if(c0&&CATS.includes(c0)) activeCat=c0;
 setCategory(activeCat,false);
 if(c0||q0) setTimeout(revealProducts,60);
+
+/* Filtro de recetas sin gluten */
+document.querySelectorAll('[data-recipe-filter]').forEach(btn=>btn.addEventListener('click',()=>{
+  const filter=btn.dataset.recipeFilter;
+  document.querySelectorAll('[data-recipe-filter]').forEach(b=>b.classList.toggle('active',b===btn));
+  document.querySelectorAll('.recipe-card').forEach(card=>{
+    card.classList.toggle('hidden',filter!=='todos' && card.dataset.recipeCategory!==filter);
+  });
+}));
+
 </script>
 
 
