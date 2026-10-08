@@ -1,0 +1,27 @@
+SOLUCIÓN ERROR 404 - RECETAS
+
+He dejado las 10 recetas en la raíz del repositorio para evitar problemas con la carpeta recetas.
+
+En GitHub, sube/sustituye el index.html y los 10 archivos de receta que están en esta carpeta.
+No hace falta crear ni subir una carpeta recetas.
+
+Estructura esperada:
+index.html
+10-productos-sin-gluten.html
+despensa-sin-gluten.html
+utensilios-cocina-basicos.html
+basculas-cocina-reposteria.html
+utensilios-reposteria.html
+snacks-sin-gluten.html
+empezar-reposteria.html
+recipientes-despensa.html
+brownie-chocolate-sin-gluten.html
+bizcocho-yogur-sin-gluten.html
+tortitas-sin-gluten.html
+galletas-chocolate-sin-gluten.html
+pizza-casera-sin-gluten.html
+pan-casero-sin-gluten.html
+magdalenas-sin-gluten.html
+bizcocho-manzana-sin-gluten.html
+pan-molde-sin-gluten.html
+bizcocho-platano-sin-gluten.html
